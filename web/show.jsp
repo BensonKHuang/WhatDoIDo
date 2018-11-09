@@ -5,9 +5,12 @@
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 <%@ page import="static com.googlecode.objectify.ObjectifyService.ofy" %>
 <%@ page import="wdid.*" %>
+<%@ page import="wdid.Recommendations.RecommendationIterator" %>
+<%@ page import="wdid.Recommendations.Recommendation" %>
 
 <html>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%--<jsp:include page="/foodRec" />--%>
 
 <head>
     <title>What Do I Do</title>
@@ -18,6 +21,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
 </head>
+
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -35,11 +39,13 @@
 <div id="landing-button" class="text-center">
     
 	<%
-   		String food = (String) request.getAttribute("food");
-   		if (food != null){
+   		RecommendationIterator food = (RecommendationIterator) request.getAttribute("food");
+   		if (food != null && food.hasNext()){
+            Recommendation f = food.next();
+
    	%>
-		<h1> food </h1>
-		<h1> Hello</h1>
+		<h1> <%= f.getName()%> </h1>
+        <h3> <%= f.getLocation() %></h3>
 	<%
 	}else{
 	%>

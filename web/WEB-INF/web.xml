@@ -6,7 +6,7 @@
          
 	<servlet>
 		<servlet-name>movieRec</servlet-name>
-		<servlet-class>wdid.MovieServlet</servlet-class>
+		<servlet-class>wdid.Servlets.MovieServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>movieRec</servlet-name>
@@ -15,13 +15,13 @@
 	
 	<servlet>
 		<servlet-name>foodRec</servlet-name>
-		<servlet-class>wdid.FoodServlet</servlet-class>
+		<servlet-class>wdid.Servlets.FoodServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>foodRec</servlet-name>
 		<url-pattern>/foodRec</url-pattern>
 	</servlet-mapping>
-	 
+
   <welcome-file-list>
     <welcome-file>landing.jsp</welcome-file>
   </welcome-file-list>
