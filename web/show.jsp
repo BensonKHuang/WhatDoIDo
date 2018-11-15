@@ -64,7 +64,7 @@
 
     <div id="map"></div>
 
-    <script>
+            <script>
         var map;
         var latlng = {lng: -97.7341 , lat: 30.2849};
         function initMap() {
