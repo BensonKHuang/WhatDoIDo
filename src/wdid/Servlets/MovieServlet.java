@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet
 public class MovieServlet extends HttpServlet {
-
 	private static final long serialVersionUID = 2L;
 
 	private static RecommendationFactory factory;
@@ -24,7 +23,7 @@ public class MovieServlet extends HttpServlet {
 		req.setAttribute("rec", factory.getRecommendations(null));
 		resp.setContentType("text/html");
 		RequestDispatcher view;
-		view = req.getRequestDispatcher("/show.jsp");
+		view = req.getRequestDispatcher("/movieShow.jsp");
 		view.forward(req, resp);
 	}
 }
