@@ -6,6 +6,7 @@ public abstract class Recommendation {
 	
 	private String name;
 	private Location location;
+	public String description;
 	
 	public Recommendation(String name, Location location) {
 		this.name = name;
@@ -22,6 +23,13 @@ public abstract class Recommendation {
 
 	public Location getLocation() {
 		return location;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void setLocation(Location location) {

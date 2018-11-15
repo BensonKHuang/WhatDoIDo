@@ -1,5 +1,6 @@
 package wdid.Factory;
 
+import com.google.appengine.repackaged.com.google.gson.*;
 import wdid.Recommendations.Location;
 import wdid.Recommendations.Movie;
 import wdid.Recommendations.Recommendation;
@@ -12,8 +13,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.*;
-
 public class MovieFactory implements RecommendationFactory {
 
     @Override
@@ -22,9 +21,9 @@ public class MovieFactory implements RecommendationFactory {
     }
 
     private static List<Recommendation> getData(){
-        StringBuilder json = new StringBuilder();
+        StringBuffer json = new StringBuffer();
         try {
-            URL url = new URL("https://api.themoviedb.org/3/trending/all/day?api_key=6cfedfd687303ef665995ed86e258bdc/");
+            URL url = new URL("https://api.themoviedb.org/3/trending/all/day?api_key=6cfedfd687303ef665995ed86e258bdc");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
             String line;
 
@@ -34,15 +33,21 @@ public class MovieFactory implements RecommendationFactory {
             reader.close();
         } catch(Exception ignored){}
 
-        JSONObject parseJSON = new JSONObject(json);
-        JSONArray results = parseJSON.getJSONArray("results");
-        int size = results.length();
+        JsonObject parseJSON = new JsonParser().parse(json.toString()).getAsJsonObject();
+        JsonArray results = parseJSON.get("results").getAsJsonArray();
+        int size = results.size();
 
         List<Recommendation> res = new ArrayList<>();
         for(int i = 0; i < size; i++){
-            JSONObject grab = (JSONObject)results.get(i);
-            Recommendation movie = new Movie(grab.getString("original_title"), new Location(), grab.getString("overview"));
-            res.add(movie);
+            JsonObject grab = results.get(i).getAsJsonObject();
+
+            JsonElement title = grab.get("original_title");
+            JsonElement desc  = grab.get("overview");
+
+            if(title != null && desc != null){
+                Recommendation movie = new Movie(title.getAsString(), new Location(), desc.getAsString());
+                res.add(movie);
+            }
         }
 
 		return res;

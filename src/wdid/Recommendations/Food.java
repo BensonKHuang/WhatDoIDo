@@ -9,8 +9,7 @@ public class Food extends Recommendation {
 	
 	private static Double rating;
 	private static List<Review> reviews;
-	
-	private String description;
+
 	private Double restaurantRating;
 	
 	static {
@@ -20,12 +19,8 @@ public class Food extends Recommendation {
 	
 	public Food(String name, Location location, String description, Double rating) {
 		super(name, location);
-		this.description = description;
+		setDescription(description);
 		this.setRestaurantRating(rating);
-	}
-	
-	public String getDescription() {
-		return description;
 	}
 	
 	public static void addReview(Review review) {

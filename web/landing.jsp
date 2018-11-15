@@ -36,7 +36,6 @@
     <a href="/foodRec" class="btn btn-lg btn-primary">Food</a>
     <div class="divider"></div>
     <a href="/movieRec" class="btn btn-lg btn-primary">Movies</a>
-    
 </div>
 
 </body>

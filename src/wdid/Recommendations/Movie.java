@@ -9,9 +9,6 @@ public class Movie extends Recommendation {
 	private static Double rating;
 	private static List<Review> reviews;
 	
-	private String description;
-
-	
 	static {
 		rating = 0.0;
 		reviews = new ArrayList<>();
@@ -19,13 +16,9 @@ public class Movie extends Recommendation {
 	
 	public Movie(String name, Location location, String description) {
 		super(name, location);
-		this.description = description;
+		setDescription(description);
 	}
-	
-	public String getDescription() {
-		return description;
-	}
-	
+
 	public static void addReview(Review review) {
 		reviews.add(review);
 		updateRating(review.getRating());
