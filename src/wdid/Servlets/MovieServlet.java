@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet
 public class MovieServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 2L;
@@ -20,7 +21,6 @@ public class MovieServlet extends HttpServlet {
 		factory = new MovieFactory();
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		req.setAttribute("rec", factory.getRecommendations(null));
 		resp.setContentType("text/html");
 		RequestDispatcher view;

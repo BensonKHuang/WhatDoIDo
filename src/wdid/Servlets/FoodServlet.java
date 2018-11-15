@@ -1,4 +1,5 @@
 package wdid.Servlets;
+
 import wdid.Factory.FoodFactory;
 import wdid.Factory.RecommendationFactory;
 
@@ -20,7 +21,6 @@ public class FoodServlet extends HttpServlet {
 		factory = new FoodFactory();
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		req.setAttribute("rec", factory.getRecommendations(null));
 		resp.setContentType("text/html");
 		RequestDispatcher view;

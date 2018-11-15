@@ -35,7 +35,7 @@
 <div id="landing-button" class="text-center">
     <a href="/foodRec" class="btn btn-lg btn-primary">Food</a>
     <div class="divider"></div>
-    <a href="/show.jsp" class="btn btn-lg btn-primary">Movies</a>
+    <a href="/movieRec" class="btn btn-lg btn-primary">Movies</a>
     
 </div>
 
