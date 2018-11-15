@@ -1,0 +1,77 @@
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+}
+
+#landing-button {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+    color: white;
+}
+
+#intro{
+    /*width: 15%;*/
+}
+
+#recommendation{
+    /*width: 25%;*/
+}
+
+#location{
+    /*width: 15%;*/
+}
+
+.highlight{
+    background-color: whitesmoke;
+    color: black;
+    margin-top: 1%;
+    margin-left: 1%;
+    clear: both;
+    float: left;
+    border: solid lightsteelblue;
+}
+
+.divider{
+    width:100px;
+    display:inline-block;
+}
+
+#navContainer {
+    z-index: 100;
+    position: fixed;
+    height: 50px;
+}
+#container {
+    z-index: 100;
+    position: relative;
+    margin-top: 60px;
+}
+
+#next_rec {
+    z-index: 100;
+    position: relative;
+    margin-top: 6%;
+    float: right;
+    margin-right: 1%;
+}
+
+#map {
+    opacity: 0.7;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

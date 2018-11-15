@@ -24,3 +24,7 @@ body {
     width:100px;
     display:inline-block;
 }
+
+#map {
+	height: 100%;
+}
