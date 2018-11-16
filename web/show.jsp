@@ -44,7 +44,7 @@
                 Recommendation f = rec.next();
         %>
 
-            <h3 id="intro" class="highlight" ><span><span>Why don't you go to </span></span></h3>
+            <h3 id="intro" class="highlight" ><span><span>Why don't you eat at </span></span></h3>
             <h1 id="recommendation" class="highlight">
                 <span><span><%= f.getName()%></span></span>
             </h1>
@@ -59,7 +59,7 @@
     </div>
 
     <div id="next_rec" >
-        <button href="#" class="btn-danger btn-lrg">No, That place looks like shit.</button>
+        <button href="#" class="btn-danger btn-lrg">No, that looks bad.</button>
     </div>
 
     <div id="map"></div>

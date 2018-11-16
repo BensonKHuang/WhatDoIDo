@@ -50,7 +50,7 @@
 </div>
 
 <div id="next_rec" >
-    <button class="btn-danger btn-lrg" onclick="cycle()">No, That looks bad.</button>
+    <button class="btn-danger btn-lrg" onclick="cycle()">No, that looks bad.</button>
 </div>
 
 <div id="map"></div>
