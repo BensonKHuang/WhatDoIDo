@@ -10,15 +10,14 @@ public class FoodFactory implements RecommendationFactory{
 
     @Override
     public RecommendationIterator getRecommendations(User user) {
-        RecommendationIterator iterator = new RecommendationIterator(getDummy());
-        return iterator;
+        return new RecommendationIterator(getData());
         // TODO: Add API here
     }
 
-    public List<Recommendation> getDummy(){
+    public List<Recommendation> getData(){
         List<Recommendation> res = new ArrayList<>();
         Location location = new Location();
-        Recommendation food = new Food("Mac D's", location, "WOW THIS IS FOOKIN GOOD FOOD", 4.9);
+        Recommendation food = new Food("Mac D's", location, "sux", 4.9);
         res.add(food);
         return res;
     }

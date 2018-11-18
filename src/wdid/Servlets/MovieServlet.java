@@ -21,6 +21,7 @@ public class MovieServlet extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("rec", factory.getRecommendations(null));
+		req.setAttribute("msg", "Why don't you go watch...");
 		resp.setContentType("text/html");
 		RequestDispatcher view;
 		view = req.getRequestDispatcher("/show.jsp");

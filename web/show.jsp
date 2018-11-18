@@ -37,7 +37,7 @@
 
 <div id="container">
 
-    <h3 id="intro" class="highlight" ><span><span>Why don't you go watch </span></span></h3>
+    <h3 id="intro" class="highlight" ><span><span><%=request.getAttribute("msg")%></span></span></h3>
     <h1 id="recommendation" class="highlight">
         <span><span id="theTitle"> ... </span></span>
     </h1>

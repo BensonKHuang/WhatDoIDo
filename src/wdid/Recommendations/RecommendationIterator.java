@@ -8,6 +8,7 @@ import java.util.Queue;
 public class RecommendationIterator implements Iterator<Recommendation> {
 
     Queue<Recommendation> recommendationsQueue;
+
     public RecommendationIterator(List<Recommendation> recommendations){
         recommendationsQueue = new LinkedList<>();
         recommendationsQueue.addAll(recommendations);
@@ -22,4 +23,5 @@ public class RecommendationIterator implements Iterator<Recommendation> {
     public Recommendation next() {
         return recommendationsQueue.poll();
     }
+
 }
