@@ -23,7 +23,7 @@ public class MovieServlet extends HttpServlet {
 		req.setAttribute("rec", factory.getRecommendations(null));
 		resp.setContentType("text/html");
 		RequestDispatcher view;
-		view = req.getRequestDispatcher("/movieShow.jsp");
+		view = req.getRequestDispatcher("/show.jsp");
 		view.forward(req, resp);
 	}
 }
