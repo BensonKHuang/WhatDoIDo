@@ -10,7 +10,6 @@
 
 <html>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%--<jsp:include page="/foodRec" />--%>
 
 <head>
     <title>What Do I Do</title>
@@ -57,6 +56,7 @@
 <%
     RecommendationIterator recItr = (RecommendationIterator)request.getAttribute("rec");
 %>
+
 <script>
     var nameList = [];
     var descList = [];
