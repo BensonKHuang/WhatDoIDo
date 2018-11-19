@@ -18,6 +18,12 @@
           crossorigin="anonymous">
 </head>
 <body>
+
+<%
+    UserService userService = UserServiceFactory.getUserService();
+    User user = userService.getCurrentUser();
+%>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -27,15 +33,31 @@
             <li><a href="/team.jsp">Meet the Team</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/user.jsp">Your Name</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <%  if(user != null){
+                pageContext.setAttribute("user", user); %>
+            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span>${fn:escapeXml(user.nickname)}</a></li>
+            <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <% } else {%>
+            <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <%}%>
         </ul>
     </div>
 </nav>
 
-<div id="landing-button" class="text-center">
-    <h1>SHOW USER PREFERENCES HERE</h1>
-</div>
+<form>
+    <div class="row">
+        <div class="span6">
+            <div class="nonboxy-widget">
+                <div class="widget-head">
+                    <h5>Details</h5>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-box">
+                        <div class = 'form-horizontal well'>
+                            <fieldset>
+                                <div class="control-group">
+                                    <label class="control-label">Sale Type</label>
+                                    <div class="controls">
 
 </body>
 </html>

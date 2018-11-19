@@ -17,7 +17,14 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
 </head>
+
 <body>
+
+<%
+    UserService userService = UserServiceFactory.getUserService();
+    User user = userService.getCurrentUser();
+%>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -27,8 +34,13 @@
             <li class="active"><a href="/team.jsp">Meet the Team</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/user.jsp">Your Name</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <%  if(user != null){
+                pageContext.setAttribute("user", user); %>
+            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span>${fn:escapeXml(user.nickname)}</a></li>
+            <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <% } else {%>
+            <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <%}%>
         </ul>
     </div>
 </nav>
@@ -148,7 +160,28 @@
                 <span>backend</span>
             </div>
         </div>
-
+        <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+                <div class="team-img">
+                    <img src="/assets/shen.png" alt="team member" class="img-responsive">
+                </div>
+                <div class="team-hover">
+                    <div class="desk">
+                        <h4>I love WDID</h4>
+                        <p>I support WDID and its owners!</p>
+                    </div>
+                    <div class="s-link">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-title">
+                <h5>Xiaocheng Shen</h5>
+                <span>cheerleader</span>
+            </div>
+        </div>
     </div>
 
 </div>

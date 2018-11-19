@@ -22,6 +22,12 @@
 </head>
 
 <body>
+
+<%
+    UserService userService = UserServiceFactory.getUserService();
+    User user = userService.getCurrentUser();
+%>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -32,8 +38,13 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/user.jsp">Your Name</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <%  if(user != null){
+                pageContext.setAttribute("user", user); %>
+            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span>${fn:escapeXml(user.nickname)}</a></li>
+            <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <% } else {%>
+            <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <%}%>
         </ul>
     </div>
 </nav>
