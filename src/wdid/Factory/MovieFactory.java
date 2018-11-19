@@ -45,7 +45,7 @@ public class MovieFactory implements RecommendationFactory {
             JsonElement desc  = grab.get("overview");
 
             if(title != null && desc != null){
-                Recommendation movie = new Movie(title.getAsString(), new Location(), desc.getAsString());
+                Recommendation movie = new Movie(title.getAsString(), new Location(30.2849, -97.7341), desc.getAsString());
                 res.add(movie);
             }
         }
