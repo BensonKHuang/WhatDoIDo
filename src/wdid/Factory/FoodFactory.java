@@ -45,8 +45,17 @@ public class FoodFactory implements RecommendationFactory{
             JsonElement desc  = grab.get("vicinity");
             JsonElement rating  = grab.get("rating");
 
+            JsonElement geometry = grab.get("geometry");
+            JsonElement location;
+
+            double lat = 30.288189;
+            double lng = -97.735487;
+            if(geometry != null && (location = geometry.getAsJsonObject().get("location")) != null) {
+                lat = location.getAsJsonObject().get("lat").getAsDouble();
+                lng = location.getAsJsonObject().get("lng").getAsDouble();
+            }
             if(title != null && desc != null && rating != null){
-                Recommendation food = new Food(title.getAsString(), new Location(), desc.getAsString(), rating.getAsDouble());
+                Recommendation food = new Food(title.getAsString(), new Location(lat, lng), desc.getAsString(), rating.getAsDouble());
                 res.add(food);
             }
         }
