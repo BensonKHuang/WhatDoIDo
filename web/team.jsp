@@ -21,10 +21,10 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand active" href="/landing.jsp">What Do I Do?</a>
+            <a class="navbar-brand" href="/landing.jsp">What Do I Do?</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/team.jsp">Meet the Team</a></li>
+            <li class="active"><a href="/team.jsp">Meet the Team</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/user.jsp">Your Name</a></li>
@@ -34,7 +34,7 @@
 </nav>
 
 <div id="landing-button" class="text-center">
-    <h1>SHOW USER PREFERENCES HERE</h1>
+    <h1>SHOW TEAM HERE</h1>
 </div>
 
 </body>

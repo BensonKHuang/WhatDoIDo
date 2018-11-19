@@ -24,8 +24,10 @@
         <div class="navbar-header">
             <a class="navbar-brand active" href="/landing.jsp">What Do I Do?</a>
         </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/team.jsp">Meet the Team</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
-
             <li><a href="user.jsp">Your Name</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
         </ul>
