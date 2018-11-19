@@ -44,20 +44,79 @@
     </div>
 </nav>
 
-<form>
-    <div class="row">
-        <div class="span6">
-            <div class="nonboxy-widget">
-                <div class="widget-head">
-                    <h5>Details</h5>
-                </div>
-                <div class="widget-content">
-                    <div class="widget-box">
-                        <div class = 'form-horizontal well'>
-                            <fieldset>
-                                <div class="control-group">
-                                    <label class="control-label">Sale Type</label>
-                                    <div class="controls">
+<div class="container">
+    <h1>User Preferences</h1>
+
+    <form action="/userUpdate" method="post">
+        <h3>Gender</h3>
+        <div class="form-group">
+            <select class="form-control" id="gender" >
+                <option>Male</option>
+                <option>Female</option>
+                <option selected>Non-Binary</option>
+            </select>
+        </div>
+
+        <h3>Age</h3>
+        <div class="form-group">
+            <select class="form-control" id="age">
+                <option selected>Choose your age range</option>
+                <option>under 18</option>
+                <option>18-29</option>
+                <option>30-39</option>
+                <option>40-49</option>
+                <option>50-59</option>
+                <option>60+</option>
+            </select>
+        </div>
+
+        <h3>Dietary</h3>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="vegetarian">
+            <label class="form-check-label" for="vegetarian">Vegetarian</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="vegan">
+            <label class="form-check-label" for="vegan">Vegan</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="gluten">
+            <label class="form-check-label" for="gluten">Gluten Free</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="lactose">
+            <label class="form-check-label" for="lactose">Lactose Free</label>
+        </div>
+
+        <h3>Entertainment</h3>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="adventure">
+            <label class="form-check-label" for="adventure">Adventure</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="action">
+            <label class="form-check-label" for="action">Action</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="drama">
+            <label class="form-check-label" for="drama">Drama</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="comedy">
+            <label class="form-check-label" for="comedy">Comedy</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="horror">
+            <label class="form-check-label" for="horror">Horror</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="romantic">
+            <label class="form-check-label" for="romantic">Romance</label>
+        </div>
+
+        <button type="submit" class="btn">Save</button>
+    </form>
+</div>
 
 </body>
 </html>

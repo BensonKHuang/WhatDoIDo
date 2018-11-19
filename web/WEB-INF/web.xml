@@ -22,6 +22,15 @@
 		<url-pattern>/foodRec</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>userUpdate</servlet-name>
+		<servlet-class>wdid.Servlets.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userUpdate</servlet-name>
+		<url-pattern>/userUpdate</url-pattern>
+	</servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>landing.jsp</welcome-file>
   </welcome-file-list>
