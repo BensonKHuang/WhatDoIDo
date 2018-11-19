@@ -37,12 +37,11 @@
     <div class="row">
         <div class="heading-title text-center">
             <h3 class="text-uppercase">Our Team</h3>
-            <p class="p-top-30 half-txt">Software Lab 2018 </p>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="https://image.freepik.com/free-photo/man-standing-with-a-black-t-shirt_1187-1045.jpg" alt="team member" class="img-responsive">
+                    <img src="/assets/benson.png" alt="team member" class="img-responsive">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -61,10 +60,10 @@
                 <span>frontend</span>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="https://image.freepik.com/free-photo/elegant-man-with-thumbs-up_1149-1595.jpg" alt="team member" class="img-responsive">
+                    <img src="/assets/hasan.png" alt="team member" class="img-responsive">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -86,7 +85,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="https://image.freepik.com/free-photo/well-dressed-executive-with-crossed-arms_1098-3930.jpg" alt="team member" class="img-responsive">
+                    <img src="/assets/nick.png" alt="team member" class="img-responsive">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -101,14 +100,14 @@
                 </div>
             </div>
             <div class="team-title">
-                <h5>Nickolas Jang</h5>
+                <h5>Nicholas Jang</h5>
                 <span>frontend</span>
             </div>
         </div>
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="https://image.freepik.com/free-photo/well-dressed-executive-with-crossed-arms_1098-3930.jpg" alt="team member" class="img-responsive">
+                    <img src="/assets/jerry.png" alt="team member" class="img-responsive">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -130,7 +129,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="https://image.freepik.com/free-photo/well-dressed-executive-with-crossed-arms_1098-3930.jpg" alt="team member" class="img-responsive">
+                    <img src="/assets/dilan.png" alt="team member" class="img-responsive">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
