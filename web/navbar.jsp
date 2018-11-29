@@ -5,6 +5,23 @@
   Time: 12:38 AM
   To change this template use File | Settings | File Templates.
 --%>
+
+<%@ page import="wdid.Users.*"%>
+<%@ page import="com.googlecode.objectify.*"%>
+<%@ page import="com.google.appengine.api.users.User" %>
+<%@ page import="com.google.appengine.api.users.UserService" %>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ page import="static com.googlecode.objectify.ObjectifyService.ofy" %>
+
+<%
+    UserService userService = UserServiceFactory.getUserService();
+    User user = userService.getCurrentUser();
+
+    ObjectifyService.begin();
+    ObjectifyService.register(WDIDUser.class);
+    WDIDUser userObj;
+%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
@@ -18,10 +35,10 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <%  if(user != null) {
-                userObj = ObjectifyService.ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
+                userObj = ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
                 if(userObj == null) {
                     userObj = new WDIDUser(user.getEmail(), user.getNickname());
-                    ObjectifyService.ofy().save().entity(userObj).now();
+                    ofy().save().entity(userObj).now();
                 }
             %>
             <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span><%=user.getNickname()%></a></li>

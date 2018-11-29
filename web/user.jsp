@@ -1,10 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="wdid.Users.*"%>
-<%@ page import="com.googlecode.objectify.*"%>
-<%@ page import="com.google.appengine.api.users.User" %>
-<%@ page import="com.google.appengine.api.users.UserService" %>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
-<%@ page import="static com.googlecode.objectify.ObjectifyService.ofy" %>
 
 <html>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -19,15 +13,6 @@
           crossorigin="anonymous">
 </head>
 <body>
-
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-
-    ObjectifyService.begin();
-    ObjectifyService.register(WDIDUser.class);
-    WDIDUser userObj;
-%>
 
 <%@include file="navbar.jsp" %>
 

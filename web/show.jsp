@@ -1,10 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="wdid.Users.*"%>
-<%@ page import="com.googlecode.objectify.*"%>
-<%@ page import="com.google.appengine.api.users.User" %>
-<%@ page import="com.google.appengine.api.users.UserService" %>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
-<%@ page import="static com.googlecode.objectify.ObjectifyService.ofy" %>
 <%@ page import="wdid.Recommendations.RecommendationIterator" %>
 <%@ page import="wdid.Recommendations.Recommendation" %>
 
@@ -22,15 +16,6 @@
 </head>
 
 <body>
-
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-
-    ObjectifyService.begin();
-    ObjectifyService.register(WDIDUser.class);
-    WDIDUser userObj;
-%>
 
 <%@include file="navbar.jsp" %>
 
