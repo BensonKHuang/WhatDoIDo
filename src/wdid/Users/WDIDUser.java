@@ -18,7 +18,7 @@ public class WDIDUser {
 		this.email = email;
 
 		this.gender = 0;
-		this.age    = 0;
+		this.age    = 18;
 		this.diet   = new boolean[4];
 		this.movie  = new boolean[6];
 	}
