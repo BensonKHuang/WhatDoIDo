@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="wdid.Users.*"%>
 <%@ page import="com.googlecode.objectify.*"%>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
@@ -22,6 +23,10 @@
 <%
     UserService userService = UserServiceFactory.getUserService();
     User user = userService.getCurrentUser();
+
+    ObjectifyService.begin();
+    ObjectifyService.register(WDIDUser.class);
+    WDIDUser userObj;
 %>
 
 <nav class="navbar navbar-inverse">
@@ -33,9 +38,14 @@
             <li><a href="/team.jsp">Meet the Team</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <%  if(user != null){
-                    request.setAttribute("user", user); %>
-            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span>${fn:escapeXml(user.nickname)}</a></li>
+            <%  if(user != null) {
+                    userObj = ObjectifyService.ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
+                    if(userObj == null) {
+                        userObj = new WDIDUser(user.getEmail(), user.getNickname());
+                        ObjectifyService.ofy().save().entity(userObj).now();
+                    }
+            %>
+            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span><%=user.getNickname()%></a></li>
             <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
             <% } else {%>
             <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -50,16 +60,16 @@
     <form action="/userUpdate" method="post">
         <h3>Gender</h3>
         <div class="form-group">
-            <select class="form-control" id="gender" >
-                <option>Male</option>
+            <select class="form-control" name="gender" >
+                <option selected>Male</option>
                 <option>Female</option>
-                <option selected>Non-Binary</option>
+                <option>Mental Illness</option>
             </select>
         </div>
 
         <h3>Age</h3>
         <div class="form-group">
-            <select class="form-control" id="age">
+            <select class="form-control" name="age">
                 <option selected>Choose your age range</option>
                 <option>under 18</option>
                 <option>18-29</option>
@@ -71,20 +81,20 @@
         </div>
 
         <h3>Dietary</h3>
-        <div class="form-check">
+        <div class="form-check" name="d0">
             <input type="checkbox" class="form-check-input" id="vegetarian">
             <label class="form-check-label" for="vegetarian">Vegetarian</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="vegan">
+            <input type="checkbox" class="form-check-input" id="vegan" name="d1">
             <label class="form-check-label" for="vegan">Vegan</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="gluten">
+            <input type="checkbox" class="form-check-input" id="gluten" name="d2">
             <label class="form-check-label" for="gluten">Gluten Free</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="lactose">
+            <input type="checkbox" class="form-check-input" id="lactose" name="d3">
             <label class="form-check-label" for="lactose">Lactose Free</label>
         </div>
 

@@ -5,7 +5,7 @@ import com.google.appengine.repackaged.com.google.gson.JsonElement;
 import com.google.appengine.repackaged.com.google.gson.JsonObject;
 import com.google.appengine.repackaged.com.google.gson.JsonParser;
 import wdid.Recommendations.*;
-import wdid.Users.User;
+import wdid.Users.WDIDUser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +16,7 @@ import java.util.List;
 public class FoodFactory implements RecommendationFactory{
 
     @Override
-    public RecommendationIterator getRecommendations(User user) {
+    public RecommendationIterator getRecommendations(WDIDUser user) {
         return new RecommendationIterator(getData());
     }
 

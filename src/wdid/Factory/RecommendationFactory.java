@@ -1,8 +1,8 @@
 package wdid.Factory;
 
 import wdid.Recommendations.*;
-import wdid.Users.User;
+import wdid.Users.WDIDUser;
 
 public interface RecommendationFactory {
-    public RecommendationIterator getRecommendations(User user);
+    public RecommendationIterator getRecommendations(WDIDUser user);
 }

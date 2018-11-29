@@ -1,30 +1,41 @@
 package wdid.Servlets;
-
-import wdid.Factory.FoodFactory;
-import wdid.Factory.RecommendationFactory;
-
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+import com.googlecode.objectify.ObjectifyService;
+import wdid.Users.WDIDUser;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 @WebServlet
 public class UserServlet extends HttpServlet {
-    private static final long serialVersionUID = 3L;
-
-    private static RecommendationFactory factory;
     static {
-        factory = new FoodFactory();
+        ObjectifyService.begin();
+        ObjectifyService.register(WDIDUser.class);
     }
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO: ADD OBJECTIFY HERE TO SAVE USER PREF
-        resp.setContentType("text/html");
-        RequestDispatcher view;
-        view = req.getRequestDispatcher("/user.jsp");
-        view.forward(req, resp);
+
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        UserService userService = UserServiceFactory.getUserService();
+        User user = userService.getCurrentUser();
+
+        if(user != null) {
+            WDIDUser userObj = ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
+
+            /* SETTINGS */
+            String gender = req.getParameter("gender");
+            String age = req.getParameter("age");
+
+            ObjectifyService.ofy().save().entity(userObj).now();
+            resp.sendRedirect("/");
+        } else {
+            resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
+        }
     }
 }
 

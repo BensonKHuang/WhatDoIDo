@@ -1,22 +1,22 @@
 package wdid.Users;
-import wdid.Users.User;
+import wdid.Users.WDIDUser;
 
 import java.util.Date;
 
 public class Review {
-	private User user;
+	private WDIDUser user;
 	private String content;
 	private Date date;
 	private Double rating;
 	
-	public Review(User user, String content, Double rating) {
+	public Review(WDIDUser user, String content, Double rating) {
 		this.user = user;
 		this.content = content;
 		this.rating = rating;
 		this.date = new Date();
 	}
 
-	public User getUser() {
+	public WDIDUser getUser() {
 		return user;
 	}
 

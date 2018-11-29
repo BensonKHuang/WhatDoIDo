@@ -5,7 +5,7 @@ import wdid.Recommendations.Location;
 import wdid.Recommendations.Movie;
 import wdid.Recommendations.Recommendation;
 import wdid.Recommendations.RecommendationIterator;
-import wdid.Users.User;
+import wdid.Users.WDIDUser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +16,7 @@ import java.util.List;
 public class MovieFactory implements RecommendationFactory {
 
     @Override
-    public RecommendationIterator getRecommendations(User user) {
+    public RecommendationIterator getRecommendations(WDIDUser user) {
         return new RecommendationIterator(getData());
     }
 
