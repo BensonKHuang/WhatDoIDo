@@ -39,7 +39,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <%  if(user != null){
-                pageContext.setAttribute("user", user); %>
+                    request.setAttribute("user", user); %>
             <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span>${fn:escapeXml(user.nickname)}</a></li>
             <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
             <% } else {%>
