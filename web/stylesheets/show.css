@@ -77,3 +77,11 @@ body {
     left: 0;
     right: 0;
 }
+
+.navbar{
+    z-index: 100;
+}
+
+.nav {
+    font-weight: 800;
+}
