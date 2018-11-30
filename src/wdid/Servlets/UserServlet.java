@@ -31,8 +31,8 @@ public class UserServlet extends HttpServlet {
             int gender = req.getParameter("gender") != null ? Integer.valueOf(req.getParameter("gender")) : 0;
             int age = req.getParameter("age") != null ? Integer.valueOf(req.getParameter("age")) : 18;
 
-            userObj.gender = gender;
-            userObj.age    = age;
+            userObj.setGender(gender);
+            userObj.setAge(age);
 
             for(int i = 0; i < userObj.diet.length; i++)
                 userObj.diet[i] = !(req.getParameter("d" + Integer.toString(i)) == null);

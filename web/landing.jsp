@@ -5,12 +5,30 @@
 
 <body>
 
+<script>
+    navigator.geolocation.getCurrentPosition(function(location) {
+        document.getElementById("latFood").value = location.coords.latitude;
+        document.getElementById("longFood").value = location.coords.longitude;
+
+        document.getElementById("latMovie").value = location.coords.latitude;
+        document.getElementById("longMovie").value = location.coords.longitude;
+    });
+</script>
+
 <%@include file="navbar.jsp" %>
 
 <div id="landing-button" class="text-center">
-    <a href="/foodRec" class="btn btn-lg btn-primary">Food</a>
+    <form action="/foodRec" method="GET">
+        <input id="latFood" name="lat" type="hidden" value=""/>
+        <input id="longFood" name="long" type="hidden" value=""/>
+        <input class="btn btn-lg btn-primary" type="submit" value="Food"/>
+    </form>
     <div class="divider"></div>
-    <a href="/movieRec" class="btn btn-lg btn-primary">Movies</a>
+    <form action="/movieRec" method="GET">
+        <input id="latMovie" name="lat" type="hidden" value=""/>
+        <input id="longMovie" name="long" type="hidden" value=""/>
+        <input class="btn btn-lg btn-primary" type="submit" value="Movie"/>
+    </form>
 </div>
 
 </body>
