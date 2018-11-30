@@ -12,6 +12,7 @@
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 <%@ page import="static com.googlecode.objectify.ObjectifyService.ofy" %>
+<%@ page import="java.util.Enumeration" %>
 
 <%
     UserService userService = UserServiceFactory.getUserService();
@@ -48,7 +49,7 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <% if (user != null) {
+            <%  if (user != null) {
                 userObj = ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
                 if (userObj == null) {
                     userObj = new WDIDUser(user.getEmail(), user.getNickname());
@@ -60,11 +61,15 @@
                 </a>
             </li>
             <li class="nav-item active"><a class="btn btn-danger"
-                                           href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Logout</a>
+                                           href="<%= userService.createLogoutURL((String) request.getAttribute("javax.servlet.forward.request_uri") == null ?
+                                           request.getRequestURI() : (String) request.getAttribute("javax.servlet.forward.request_uri")
+                                           ) %>">Logout</a>
             </li>
             <% } else {%>
             <li class="nav-item active"><a class="btn btn-success"
-                                           href="<%= userService.createLoginURL(request.getRequestURI()) %>">Login</a>
+                                           href="<%= userService.createLoginURL((String) request.getAttribute("javax.servlet.forward.request_uri") == null ?
+                                           request.getRequestURI() : (String) request.getAttribute("javax.servlet.forward.request_uri")
+                                           ) %>">Login</a>
             </li>
             <%}%>
         </ul>
