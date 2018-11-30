@@ -5,39 +5,30 @@
 <html>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<head>
-    <title>What Do I Do</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="/stylesheets/show.css" />
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
-</head>
-
 <body>
 
 <%@include file="navbar.jsp" %>
 
-<div id="container">
+<div class="card w-25" style="width: 18rem;">
+    <div class="card-body">
+        <h3 id="intro" ><span><span><%=request.getAttribute("msg")%></span></span></h3>
+        <h1 id="recommendation">
+            <span><span id="theTitle"> ... </span></span>
+        </h1>
+        <h3 id="location" class="card-text mb-auto">
+            <span><span id="theDesc"> ... </span></span>
+        </h3>
+    </div>
 
-    <h3 id="intro" class="highlight" ><span><span><%=request.getAttribute("msg")%></span></span></h3>
-    <h1 id="recommendation" class="highlight">
-        <span><span id="theTitle"> ... </span></span>
-    </h1>
-    <h3 id="location" class="highlight">
-        <span><span id="theDesc"> ... </span></span>
-    </h3>
-
+    <div id="next_rec" >
+        <button class="btn btn-primary" onclick="cycle()">Give me another choice.</button>
+    </div>
 </div>
 
-<div id="next_rec" >
-    <button class="btn-danger btn-lrg" onclick="cycle()">No, that looks bad.</button>
-</div>
 
 <div id="map"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap" defer></script>
 
 <%
     RecommendationIterator recItr = (RecommendationIterator)request.getAttribute("rec");
@@ -60,7 +51,6 @@
     <%}%>
 
     function updateMap(lng, lat){
-        console.error(lng + " " + lat);
         var panPoint = new google.maps.LatLng(lat, lng);
         map.panTo(panPoint);
         marker.setPosition(panPoint);

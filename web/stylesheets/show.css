@@ -23,6 +23,7 @@ body {
 
 #intro{
     /*width: 15%;*/
+    color: #007bff;
 }
 
 #recommendation{
@@ -31,6 +32,7 @@ body {
 
 #location{
     /*width: 15%;*/
+    font-size: 1rem;
 }
 
 .highlight{
@@ -62,9 +64,9 @@ body {
 
 #next_rec {
     z-index: 100;
-    position: absolute;
-    margin: 18% 88%;
-    width: 12%;
+    position: relative;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 #map {
@@ -84,4 +86,9 @@ body {
 
 .nav {
     font-weight: 800;
+}
+
+.card {
+    z-index: 100;
+    margin: 50px;
 }

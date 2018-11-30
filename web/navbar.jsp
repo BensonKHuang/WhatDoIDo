@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page import="wdid.Users.*"%>
-<%@ page import="com.googlecode.objectify.*"%>
+<%@ page import="wdid.Users.*" %>
+<%@ page import="com.googlecode.objectify.*" %>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
@@ -24,30 +24,52 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <title>What Do I Do</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/show.css"/>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand active" href="/landing.jsp">What Do I Do?</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/team.jsp">Meet the Team</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/landing.jsp">What Do I Do?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/team.jsp">Meet the Team</a>
+            </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <%  if(user != null) {
+        <ul class="navbar-nav">
+            <% if (user != null) {
                 userObj = ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
-                if(userObj == null) {
+                if (userObj == null) {
                     userObj = new WDIDUser(user.getEmail(), user.getNickname());
                     ofy().save().entity(userObj).now();
                 }
             %>
-            <li><a href="/user.jsp"><span class="glyphicon glyphicon-user"></span><%=user.getNickname()%></a></li>
-            <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/user.jsp"><%=user.getNickname()%>
+                </a>
+            </li>
+            <li class="nav-item active"><a class="btn btn-danger"
+                                           href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Logout</a>
+            </li>
             <% } else {%>
-            <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item active"><a class="btn btn-success"
+                                           href="<%= userService.createLoginURL(request.getRequestURI()) %>">Login</a>
+            </li>
             <%}%>
         </ul>
     </div>
 </nav>
+
 </body>
 </html>
