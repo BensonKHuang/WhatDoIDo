@@ -26,12 +26,12 @@
     <form action="/foodRec" method="GET">
         <input id="latFood" name="lat" type="hidden" value=""/>
         <input id="longFood" name="long" type="hidden" value=""/>
-        <input class="btn btn-lg btn-primary button-width" type="submit" value="Food"/>
+        <input class="btn btn-lg btn-primary btn-width" type="submit" value="Food"/>
     </form>
     <form action="/movieRec" method="GET">
         <input id="latMovie" name="lat" type="hidden" value=""/>
         <input id="longMovie" name="long" type="hidden" value=""/>
-        <input class="btn btn-lg btn-primary button-width" type="submit" value="Movie"/>
+        <input class="btn btn-lg btn-primary btn-width" type="submit" value="Movie"/>
     </form>
 </div>
 
