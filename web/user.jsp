@@ -8,10 +8,13 @@
 <%@include file="navbar.jsp" %>
 
 <div class="container">
-    <h1>User Preferences</h1>
+
+    <div class="heading-title text-center">
+        <h3>User Preferences</h3>
+    </div>
 
     <form action="/userUpdate" method="post">
-        <h3>Gender</h3>
+        <h5>Gender</h5>
         <div class="form-group">
             <select class="form-control" name="gender" >
                 <option value="0" selected>Male</option>
@@ -20,7 +23,7 @@
             </select>
         </div>
 
-        <h3>Age</h3>
+        <h5>Age</h5>
         <div class="form-group">
             <select class="form-control" name="age">
                 <option value="13" selected>under 18</option>
@@ -32,7 +35,7 @@
             </select>
         </div>
         <%--TODO: Update this page to reflect the "UserObj".--%>
-        <h3>Dietary</h3>
+        <h5>Dietary</h5>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="vegetarian" name="d0" value=true>
             <label class="form-check-label" for="vegan">Vegetarian</label>
@@ -50,7 +53,7 @@
             <label class="form-check-label" for="lactose">Lactose Free</label>
         </div>
 
-        <h3>Entertainment</h3>
+        <h5>Entertainment</h5>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="adventure" name="e0" value=true>
             <label class="form-check-label" for="adventure">Adventure</label>

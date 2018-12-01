@@ -28,7 +28,7 @@
 <head>
     <title>What Do I Do</title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"/>
-    <link type="text/css" rel="stylesheet" href="/stylesheets/show.css"/>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style.css"/>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"

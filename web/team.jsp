@@ -9,13 +9,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="heading-title text-center">
+
+        <div class="col-sm-12 heading-title text-center">
             <h3 class="text-uppercase">Our Team</h3>
         </div>
+
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/benson.png" alt="team member" class="img-responsive">
+                    <img src="/assets/benson.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -37,7 +39,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/hasan.png" alt="team member" class="img-responsive">
+                    <img src="/assets/hasan.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -59,7 +61,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/nick.png" alt="team member" class="img-responsive">
+                    <img src="/assets/nick.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -81,7 +83,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/jerry.png" alt="team member" class="img-responsive">
+                    <img src="/assets/jerry.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -103,7 +105,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/dilan.png" alt="team member" class="img-responsive">
+                    <img src="/assets/dilan.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
@@ -125,7 +127,7 @@
         <div class="col-md-4 col-sm-4">
             <div class="team-member">
                 <div class="team-img">
-                    <img src="/assets/shen.png" alt="team member" class="img-responsive">
+                    <img src="/assets/shen.png" alt="team member" class="img-fluid">
                 </div>
                 <div class="team-hover">
                     <div class="desk">
