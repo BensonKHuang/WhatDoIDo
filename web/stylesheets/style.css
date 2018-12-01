@@ -27,16 +27,16 @@ body {
     z-index: 1;
     position: relative;
     text-align: center;
-    padding-top: 40vh;
+    padding-top: 20vh;
     color: white;
 }
 
-.divider{
-    width:100px;
-    display:inline-block;
+#landing-button form {
+    display: inline;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
-/*Styling for Navbar*/
 
 #navContainer {
     z-index: 100;
@@ -48,6 +48,17 @@ body {
     z-index: 100;
     position: relative;
     margin-top: 60px;
+}
+
+.button-width {
+    width: 8%;
+}
+
+.heading-title h2 {
+    color: #a5a5a5;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+    font-weight: normal;
 }
 
 /*Styling for Show Page*/
@@ -108,7 +119,7 @@ body {
     font-weight: 800;
 }
 
-.navbar{
+.navbar {
     z-index: 100;
 }
 
@@ -118,8 +129,17 @@ body {
 
 /*Styling for User Page*/
 
-form h5{
+form h5 {
     margin-top: 25px;
+}
+
+.form-group {
+    width: 12%;
+}
+
+.user-btn {
+    margin-top: 25px;
+    width: 8%;
 }
 
 /*Styling for Team Page*/

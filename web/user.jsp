@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <div class="heading-title text-center">
+    <div class="heading-title">
         <h3>User Preferences</h3>
     </div>
 
@@ -79,7 +79,7 @@
             <label class="form-check-label" for="romantic">Romance</label>
         </div>
 
-        <button type="submit" class="btn">Save</button>
+        <button type="submit" class="btn user-btn">Save</button>
     </form>
 </div>
 
