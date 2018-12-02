@@ -2,10 +2,11 @@ package wdid.Servlets;
 
 import wdid.Factory.FoodFactory;
 import wdid.Factory.RecommendationFactory;
+import wdid.Recommendations.Recommendation;
+import wdid.Recommendations.RecommendationIterator;
 import wdid.Users.WDIDUser;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet
 public class FoodServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
+  private static final String LAT = "lat";
+  private static final String LNG = "long";
+  private static final String PLACE = "place";
+  private static final String REC = "rec";
+  private static final String MSG = "msg";
+
 
   private static RecommendationFactory factory;
 
@@ -26,16 +33,28 @@ public class FoodServlet extends HttpServlet {
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
     WDIDUser user = new WDIDUser();
-    if (req.getParameter("lat") != null
-        && !req.getParameter("lat").isEmpty()
-        && req.getParameter("long") != null
-        && !req.getParameter("long").isEmpty()) {
-      user.setLatitude(Float.parseFloat(req.getParameter("lat")));
-      user.setLongitude(Float.parseFloat(req.getParameter("long")));
-      req.setAttribute("rec", factory.getRecommendations(user));
+    RecommendationIterator res = null;
+
+    if (req.getParameter(LAT) != null
+        && !req.getParameter(LAT).isEmpty()
+        && req.getParameter(LNG) != null
+        && !req.getParameter(LNG).isEmpty()) {
+      user.setLatitude(Double.parseDouble(req.getParameter(LAT)));
+      user.setLongitude(Double.parseDouble(req.getParameter(LNG)));
+
+      res = factory.getRecommendations(user);
+    } else if (req.getParameter(PLACE) != null && !req.getParameter(PLACE).isEmpty()) {
+      user.setLatitude(null);
+      user.setLongitude(null);
+      user.setPlace(req.getParameter(PLACE));
+
+      res = factory.getRecommendations(user);
     }
 
-    req.setAttribute("msg", "Why don't you eat at...");
+    if (res != null && res.hasNext()) {
+      req.setAttribute(REC, factory.getRecommendations(user));
+    }
+    req.setAttribute(MSG, "Why don't you eat at...");
     resp.setContentType("text/html");
     RequestDispatcher view;
     view = req.getRequestDispatcher("/show.jsp");

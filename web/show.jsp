@@ -30,14 +30,12 @@
 
 <div id="map"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap"
-        defer></script>
-
 <%
     RecommendationIterator recItr = (RecommendationIterator) request.getAttribute("rec");
 %>
-
 <script>
+
+    var map;
     var nameList = [];
     var descList = [];
     var lng = [];
@@ -53,25 +51,6 @@
     lat.push("<%= f.getLocation().getLatitude() %>");
     <%}%>
 
-    function updateMap(lng, lat) {
-        var panPoint = new google.maps.LatLng(lat, lng);
-        map.panTo(panPoint);
-        marker.setPosition(panPoint);
-    }
-
-    function cycle() {
-        current++;
-        if (current < 0 || current === nameList.length)
-            current = 0;
-        document.getElementById("theTitle").innerText = nameList[current];
-        document.getElementById("theDesc").innerText = descList[current];
-        updateMap(lng[current], lat[current]);
-    }
-
-</script>
-<script>
-
-    var map;
     var latlng = {lat: 30.2849, lng: -97.7341};
 
     function initMap() {
@@ -88,14 +67,37 @@
         });
 
         marker.setMap(map);
+
+        cycle();
     }
 
-    cycle();
+    function updateMap(lat, lng) {
+        var panPoint = new google.maps.LatLng(lat, lng);
+        map.panTo(panPoint);
+        marker.setPosition(panPoint);
+    }
+
+    function cycle() {
+        current++;
+        if (current < 0 || current === nameList.length)
+            current = 0;
+        document.getElementById("theTitle").innerText = nameList[current];
+        document.getElementById("theDesc").innerText = descList[current];
+        updateMap(lat[current], lng[current]);
+    }
+
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap"></script>
+
 
 <% } else { %>
 <div class="text-center">
-    <h1>Bruh give me a location</h1>
+    <h1>Bruh we couldn't find anything.</h1>
+    <form action="/foodRec" method="GET">
+        <input id="place" name="place" placeholder="Enter a place"/>
+        <input class="btn btn-lg btn-primary btn-width" type="submit" value="Go"/>
+    </form>
 </div>
 <% }%>
 

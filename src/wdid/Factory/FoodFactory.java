@@ -4,6 +4,9 @@ import com.google.appengine.repackaged.com.google.gson.JsonArray;
 import com.google.appengine.repackaged.com.google.gson.JsonElement;
 import com.google.appengine.repackaged.com.google.gson.JsonObject;
 import com.google.appengine.repackaged.com.google.gson.JsonParser;
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.model.GeocodingResult;
 import wdid.Recommendations.*;
 import wdid.Users.WDIDUser;
 
@@ -17,12 +20,25 @@ public class FoodFactory implements RecommendationFactory {
 
   @Override
   public RecommendationIterator getRecommendations(WDIDUser user) {
+    if (user.getPlace() != null) {
+      GeocodingResult res = getGeocoding(user.getPlace());
+      user.setLatitude(res.geometry.location.lat);
+      user.setLongitude(res.geometry.location.lng);
+    }
     return new RecommendationIterator(getData(user));
   }
 
+  private GeocodingResult getGeocoding(String place) {
+    GeoApiContext context = new GeoApiContext.Builder().apiKey("AIzaSyCjJ9D9zTYhgy0ffR_7sNdHQuzue__ailA").build();
+    GeocodingResult[] results =
+        GeocodingApi.geocode(context, place).awaitIgnoreError();
+
+    return results.length > 0 ? results[0] : null;
+  }
+
   public List<Recommendation> getData(WDIDUser user) {
-    Float longitude = user.getLongitude();
-    Float latitude = user.getLatitude();
+    Double longitude = user.getLongitude();
+    Double latitude = user.getLatitude();
     StringBuffer json = new StringBuffer();
     try {
       String urlString =

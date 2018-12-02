@@ -12,7 +12,8 @@ public class WDIDUser {
 
 	@Getter @Setter private int gender,  age;
 	public boolean  diet[], movie[];
-	@Getter @Setter private Float latitude, longitude;
+	@Getter @Setter private Double latitude, longitude;
+	@Getter @Setter private String place;
 
 	public WDIDUser() {}
 	public WDIDUser(String email, String name) {
@@ -23,5 +24,6 @@ public class WDIDUser {
 		this.movie  = new boolean[6];
 		this.latitude = null;
 		this.longitude = null;
+		this.place = null;
 	}
 }

@@ -5,16 +5,6 @@
 
 <body>
 
-<script>
-    navigator.geolocation.getCurrentPosition(function(location) {
-        document.getElementById("latFood").value = location.coords.latitude;
-        document.getElementById("longFood").value = location.coords.longitude;
-
-        document.getElementById("latMovie").value = location.coords.latitude;
-        document.getElementById("longMovie").value = location.coords.longitude;
-    });
-</script>
-
 <%@include file="navbar.jsp" %>
 
 <div id="landing-button">
@@ -34,6 +24,16 @@
         <input class="btn btn-lg btn-primary btn-width" type="submit" value="Movie"/>
     </form>
 </div>
+
+<script>
+    navigator.geolocation.getCurrentPosition(function(location) {
+        document.getElementById("latFood").value = location.coords.latitude;
+        document.getElementById("longFood").value = location.coords.longitude;
+
+        document.getElementById("latMovie").value = location.coords.latitude;
+        document.getElementById("longMovie").value = location.coords.longitude;
+    });
+</script>
 
 </body>
 </html>
