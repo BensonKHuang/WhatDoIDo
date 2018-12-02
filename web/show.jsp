@@ -42,7 +42,7 @@
     var descList = [];
     var lng = [];
     var lat = [];
-    var current = 0;
+    var current = -2;
     var marker;
 
     <%while(recItr.hasNext()) {
@@ -60,12 +60,12 @@
     }
 
     function cycle() {
+        current++;
+        if (current < 0 || current === nameList.length)
+            current = 0;
         document.getElementById("theTitle").innerText = nameList[current];
         document.getElementById("theDesc").innerText = descList[current];
         updateMap(lng[current], lat[current]);
-        current++;
-        if (current === nameList.length)
-            current = 0;
     }
 
 </script>
