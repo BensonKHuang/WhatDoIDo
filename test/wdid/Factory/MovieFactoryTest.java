@@ -14,8 +14,8 @@ class MovieFactoryTest {
         int i = 1;
         while (rec.hasNext()) {
             Recommendation nxt = rec.next();
-            assertEquals(nxt.getName(), "Movie " + Integer.toString(i));
-            assertEquals(nxt.getDescription(), "Desc " + Integer.toString(i));
+            assertEquals("Movie " + Integer.toString(i), nxt.getName());
+            assertEquals("Desc " + Integer.toString(i), nxt.getDescription());
             i++;
         }
     }

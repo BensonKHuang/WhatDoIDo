@@ -17,16 +17,16 @@ class RecommendationTest {
     @Test
     void name_set_get() {
         recommendation.setName("Popeye's");
-        assertEquals(recommendation.getName(), "Popeye's");
+        assertEquals("Popeye's", recommendation.getName());
     }
 
     @Test
     void getLocation() {
-        assertEquals(recommendation.getLocation().getLatitude(), (Double)0.0);
+        assertEquals((Double)0.0, recommendation.getLocation().getLatitude());
     }
 
     @Test
     void getDescription() {
-        assertEquals(recommendation.getDescription(), "a good place");
+        assertEquals("a good place", recommendation.getDescription());
     }
 }

@@ -11,8 +11,8 @@ class WDIDUserTest {
         String email = "test@gmail.com";
         String name = "test";
         WDIDUser user = new WDIDUser(email, name);
-        assertEquals(user.getEmail(), email);
-        assertEquals(user.diet.length, 4);
-        assertEquals(user.movie.length, 6);
+        assertEquals(email, user.getEmail());
+        assertEquals(4, user.diet.length);
+        assertEquals(6, user.movie.length);
     }
 }

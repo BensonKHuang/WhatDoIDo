@@ -29,9 +29,9 @@ class RecommendationIteratorTest {
 
     @Test
     void hasNext_isTrue() {
-        assertEquals(recommendationIterator.hasNext(), true);
+        assertTrue(recommendationIterator.hasNext());
         recommendationIterator.next();
-        assertEquals(recommendationIterator.hasNext(), true);
+        assertTrue(recommendationIterator.hasNext());
     }
 
     @Test
@@ -39,19 +39,19 @@ class RecommendationIteratorTest {
         while(recommendationIterator.hasNext()){
             recommendationIterator.next();
         }
-        assertEquals(recommendationIterator.hasNext(), false);
+        assertFalse(recommendationIterator.hasNext());
     }
 
     @Test
     void next_contains() {
-        assertEquals(recommendationIterator.next(), recommendation1);
-        assertEquals(recommendationIterator.next(), recommendation2);
+        assertEquals(recommendation1, recommendationIterator.next());
+        assertEquals(recommendation2, recommendationIterator.next());
     }
 
     @Test
     void next_name() {
-        assertEquals(recommendationIterator.next().getName(), recommendation1.getName());
-        assertEquals(recommendationIterator.next().getName(), recommendation2.getName());
+        assertEquals(recommendation1.getName(), recommendationIterator.next().getName());
+        assertEquals(recommendation2.getName(), recommendationIterator.next().getName());
 
     }
 
