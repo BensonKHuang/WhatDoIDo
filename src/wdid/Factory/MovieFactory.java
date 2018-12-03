@@ -1,10 +1,7 @@
 package wdid.Factory;
 
 import com.google.appengine.repackaged.com.google.gson.*;
-import wdid.Recommendations.Location;
-import wdid.Recommendations.Movie;
-import wdid.Recommendations.Recommendation;
-import wdid.Recommendations.RecommendationIterator;
+import wdid.Recommendations.*;
 import wdid.Users.WDIDUser;
 
 import java.io.BufferedReader;
@@ -18,6 +15,13 @@ public class MovieFactory implements RecommendationFactory {
     @Override
     public RecommendationIterator getRecommendations(WDIDUser user) {
         return new RecommendationIterator(getData());
+    }
+
+    public RecommendationIterator getDummyRecommendations() {
+        List<Recommendation> dummy = new ArrayList<>();
+        for(int i = 1; i <= 5; i++)
+            dummy.add(new Movie("Movie " + Integer.toString(i), new Location(0.0, 0.0), "Desc " + Integer.toString(i)));
+        return new RecommendationIterator(dummy);
     }
 
     private static List<Recommendation> getData(){

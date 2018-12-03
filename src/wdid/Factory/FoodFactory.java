@@ -28,6 +28,13 @@ public class FoodFactory implements RecommendationFactory {
     return new RecommendationIterator(getData(user));
   }
 
+  public RecommendationIterator getDummyRecommendations() {
+    List<Recommendation> dummy = new ArrayList<>();
+    for(int i = 1; i <= 5; i++)
+      dummy.add(new Food("Food " + Integer.toString(i), new Location(0.0, 0.0), "Desc " + Integer.toString(i), (double) i));
+    return new RecommendationIterator(dummy);
+  }
+
   private GeocodingResult getGeocoding(String place) {
     GeoApiContext context = new GeoApiContext.Builder().apiKey("AIzaSyCjJ9D9zTYhgy0ffR_7sNdHQuzue__ailA").build();
     GeocodingResult[] results =
