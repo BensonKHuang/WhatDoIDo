@@ -118,7 +118,7 @@
                     <div class="desk">
                         <p>Shen is a masters student in ECE at UT.
                             He is also our cheerleader and TA for 461L.
-                            Not only has Shen empowered us in spirit and intellect.
+                            Shen has empowered us in spirit and intellect.
                             Thank you Shen.</p>
                     </div>
                 </div>
