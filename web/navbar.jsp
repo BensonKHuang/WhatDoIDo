@@ -20,7 +20,7 @@
 
     ObjectifyService.begin();
     ObjectifyService.register(WDIDUser.class);
-    WDIDUser userObj;
+    WDIDUser userObj = new WDIDUser();
 %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
