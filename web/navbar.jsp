@@ -26,7 +26,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>What do I do</title>
+    <title>What do I do?</title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/style.css"/>
     <link rel="stylesheet"
