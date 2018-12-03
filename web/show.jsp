@@ -90,15 +90,37 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap"></script>
 
-
 <% } else { %>
 <div class="text-center">
     <h1>Bruh we couldn't find anything.</h1>
-    <form action="/foodRec" method="GET">
+    <form id="place-form" onkeypress="return event.keyCode != 13;" action="/foodRec" method="GET">
         <input id="place" name="place" placeholder="Enter a place"/>
         <input class="btn btn-lg btn-primary btn-width" type="submit" value="Go"/>
     </form>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&libraries=places"></script>
+
+<script>
+    var input = document.getElementById('place');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    console.error(autocomplete);
+
+    // Set the data fields to return when the user selects a place.
+    autocomplete.setFields(
+        ['address_components', 'geometry', 'icon', 'name']);
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        } else {
+            document.getElementById('place-form').submit();
+        }
+    });
+</script>
 <% }%>
 
 </body>
