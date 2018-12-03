@@ -3,35 +3,42 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-         
-	<servlet>
-		<servlet-name>movieRec</servlet-name>
-		<servlet-class>wdid.Servlets.MovieServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>movieRec</servlet-name>
-		<url-pattern>/movieRec</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>foodRec</servlet-name>
-		<servlet-class>wdid.Servlets.FoodServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>foodRec</servlet-name>
-		<url-pattern>/foodRec</url-pattern>
-	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>userUpdate</servlet-name>
-		<servlet-class>wdid.Servlets.UserServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>userUpdate</servlet-name>
-		<url-pattern>/userUpdate</url-pattern>
-	</servlet-mapping>
+    <servlet>
+        <servlet-name>movieRec</servlet-name>
+        <servlet-class>wdid.Servlets.MovieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>movieRec</servlet-name>
+        <url-pattern>/movieRec</url-pattern>
+    </servlet-mapping>
 
-  <welcome-file-list>
-    <welcome-file>landing.jsp</welcome-file>
-  </welcome-file-list>
+    <servlet>
+        <servlet-name>foodRec</servlet-name>
+        <servlet-class>wdid.Servlets.FoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>foodRec</servlet-name>
+        <url-pattern>/foodRec</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userUpdate</servlet-name>
+        <servlet-class>wdid.Servlets.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userUpdate</servlet-name>
+        <url-pattern>/userUpdate</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>landing.jsp</welcome-file>
+    </welcome-file-list>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>

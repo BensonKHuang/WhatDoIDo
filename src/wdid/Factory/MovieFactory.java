@@ -24,7 +24,7 @@ public class MovieFactory implements RecommendationFactory {
         StringBuffer json = new StringBuffer();
         try {
             URL url = new URL("https://api.themoviedb.org/3/trending/all/day?api_key=6cfedfd687303ef665995ed86e258bdc");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
             String line;
 
             while ((line = reader.readLine()) != null) {

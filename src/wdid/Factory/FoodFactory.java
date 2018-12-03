@@ -46,7 +46,7 @@ public class FoodFactory implements RecommendationFactory {
               "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%f,%f&radius=1500&type=restaurant&key=AIzaSyCjJ9D9zTYhgy0ffR_7sNdHQuzue__ailA",
               latitude, longitude);
       URL url = new URL(urlString);
-      BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+      BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
       String line;
 
       while ((line = reader.readLine()) != null) {
