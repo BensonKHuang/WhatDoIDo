@@ -23,6 +23,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>clubRec</servlet-name>
+        <servlet-class>wdid.Servlets.ClubServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>clubRec</servlet-name>
+        <url-pattern>/clubRec</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>userUpdate</servlet-name>
         <servlet-class>wdid.Servlets.UserServlet</servlet-class>
     </servlet>
