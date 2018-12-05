@@ -38,6 +38,7 @@
     var map;
     var nameList = [];
     var descList = [];
+    var ratingList = [];
     var lng = [];
     var lat = [];
     var current = -2;
@@ -46,9 +47,10 @@
     <%while(recItr.hasNext()) {
         Recommendation f = recItr.next();
         %>nameList.push("<%= f.getName() %>");
-    descList.push("<%= f.getDescription() %>");
-    lng.push("<%= f.getLocation().getLongitude() %>");
-    lat.push("<%= f.getLocation().getLatitude() %>");
+        descList.push("<%= f.getDescription() %>");
+        lng.push("<%= f.getLocation().getLongitude() %>");
+        lat.push("<%= f.getLocation().getLatitude() %>");
+        ratingList.push("<%= f.getRating()%>");
     <%}%>
 
     var latlng = {lat: 30.2849, lng: -97.7341};
