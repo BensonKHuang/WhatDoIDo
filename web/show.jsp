@@ -47,14 +47,18 @@
     <%while(recItr.hasNext()) {
         Recommendation f = recItr.next();
         %>nameList.push("<%= f.getName() %>");
-        descList.push("<%= f.getDescription() %>");
-        lng.push("<%= f.getLocation().getLongitude() %>");
-        lat.push("<%= f.getLocation().getLatitude() %>");
-        ratingList.push("<%= f.getRating()%>");
+    descList.push("<%= f.getDescription() %>");
+    lng.push("<%= f.getLocation().getLongitude() %>");
+    lat.push("<%= f.getLocation().getLatitude() %>");
+    ratingList.push("<%= f.getRating()%>");
     <%}%>
 
-    <% if (request.getParameter("lat") != null) { %>
-    var latlng = {lat: parseFloat(<%=request.getParameter("lat")%>), lng: parseFloat(<%=request.getParameter("long")%>)};
+    <% if (request.getParameter("lat") != null && !request.getParameter("lat").isEmpty() &&
+    request.getParameter("long") != null && !request.getParameter("long").isEmpty()) { %>
+    var latlng = {
+        lat: parseFloat(<%=request.getParameter("lat")%>),
+        lng: parseFloat(<%=request.getParameter("long")%>)
+    };
     <% } else { %>
     var latlng = {lat: 30.2849, lng: -97.7341};
     <% } %>
@@ -115,7 +119,7 @@
     autocomplete.setFields(
         ['address_components', 'geometry', 'icon', 'name']);
 
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace();
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
