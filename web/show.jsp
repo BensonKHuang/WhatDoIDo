@@ -53,7 +53,11 @@
         ratingList.push("<%= f.getRating()%>");
     <%}%>
 
+    <% if (request.getParameter("lat") != null) { %>
+    var latlng = {lat: parseFloat(<%=request.getParameter("lat")%>), lng: parseFloat(<%=request.getParameter("long")%>)};
+    <% } else { %>
     var latlng = {lat: 30.2849, lng: -97.7341};
+    <% } %>
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
