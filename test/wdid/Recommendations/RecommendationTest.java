@@ -11,7 +11,7 @@ class RecommendationTest {
 
     @BeforeEach
     public void init(){
-        recommendation = new Food("McDonald's", new Location(0.0, 0.0), "a good place", 5.0);
+        recommendation = new Place("McDonald's", new Location(0.0, 0.0), "a good place");
 
     }
     @Test

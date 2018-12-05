@@ -20,7 +20,7 @@ public class MovieServlet extends HttpServlet {
 		factory = new MovieFactory();
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setAttribute("rec", factory.getRecommendations(null));
+		req.setAttribute("rec", factory.getRecommendations(null, ""));
 		req.setAttribute("msg", "Why don't you go watch...");
 		resp.setContentType("text/html");
 		RequestDispatcher view;

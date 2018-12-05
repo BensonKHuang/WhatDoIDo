@@ -61,7 +61,7 @@
                 }
             %>
             <li class="nav-item active">
-                <a class="nav-link" href="/user.jsp"><%=user.getNickname()%>
+                <a class="nav-link" href="/user.jsp">Settings
                 </a>
             </li>
             <li class="nav-item active"><a class="btn btn-danger"

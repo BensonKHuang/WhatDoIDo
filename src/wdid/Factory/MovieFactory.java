@@ -11,9 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieFactory implements RecommendationFactory {
-
     @Override
-    public RecommendationIterator getRecommendations(WDIDUser user) {
+    public RecommendationIterator getRecommendations(WDIDUser user, String unused) {
         return new RecommendationIterator(getData());
     }
 
@@ -27,7 +26,7 @@ public class MovieFactory implements RecommendationFactory {
     private static List<Recommendation> getData(){
         StringBuffer json = new StringBuffer();
         try {
-            URL url = new URL("https://api.themoviedb.org/3/trending/all/day?api_key=6cfedfd687303ef665995ed86e258bdc");
+            URL url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=6cfedfd687303ef665995ed86e258bdc&language=en-US&region=US");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
             String line;
 
@@ -47,9 +46,11 @@ public class MovieFactory implements RecommendationFactory {
 
             JsonElement title = grab.get("original_title");
             JsonElement desc  = grab.get("overview");
+            JsonElement rating  = grab.get("vote_average");
 
             if(title != null && desc != null){
                 Recommendation movie = new Movie(title.getAsString(), new Location(30.2849, -97.7341), desc.getAsString());
+                movie.setRating(rating.getAsDouble() / 2);
                 res.add(movie);
             }
         }

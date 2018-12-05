@@ -14,21 +14,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>foodRec</servlet-name>
-        <servlet-class>wdid.Servlets.FoodServlet</servlet-class>
+        <servlet-name>placeRec</servlet-name>
+        <servlet-class>wdid.Servlets.PlaceServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>foodRec</servlet-name>
-        <url-pattern>/foodRec</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>clubRec</servlet-name>
-        <servlet-class>wdid.Servlets.ClubServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>clubRec</servlet-name>
-        <url-pattern>/clubRec</url-pattern>
+        <servlet-name>placeRec</servlet-name>
+        <url-pattern>/placeRec</url-pattern>
     </servlet-mapping>
 
     <servlet>

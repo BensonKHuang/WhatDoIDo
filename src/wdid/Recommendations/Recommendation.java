@@ -6,7 +6,9 @@ public abstract class Recommendation {
 	
 	private String name;
 	private Location location;
+	private double rating;
 	public String description;
+
 	
 	public Recommendation(String name, Location location) {
 		this.name = name;
@@ -35,6 +37,13 @@ public abstract class Recommendation {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
+
+	public void setRating(double rating){
+		this.rating = Math.round(rating * 10.0) / 10.0;
+	}
+
+	public double getRating(){
+		return rating;
+	}
 	
 }

@@ -1,6 +1,5 @@
 package wdid.Recommendations;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +16,8 @@ class RecommendationIteratorTest {
 
     @BeforeEach
     public void init(){
-        recommendation1 = new Food("McDonald's", new Location(0.0, 0.0), "a good place", 5.0);
-        recommendation2 = new Food("Burger King", new Location(0.0, 0.0), "a good place", 5.0);
+        recommendation1 = new Place("McDonald's", new Location(0.0, 0.0), "a good place");
+        recommendation2 = new Place("Burger King", new Location(0.0, 0.0), "a good place");
 
         List<Recommendation> recommendationList = new ArrayList<>();
         recommendationList.add(recommendation1);
