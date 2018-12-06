@@ -47,13 +47,21 @@
     <%while(recItr.hasNext()) {
         Recommendation f = recItr.next();
         %>nameList.push("<%= f.getName() %>");
-        descList.push("<%= f.getDescription() %>");
-        lng.push("<%= f.getLocation().getLongitude() %>");
-        lat.push("<%= f.getLocation().getLatitude() %>");
-        ratingList.push("<%= f.getRating()%>");
+    descList.push("<%= f.getDescription() %>");
+    lng.push("<%= f.getLocation().getLongitude() %>");
+    lat.push("<%= f.getLocation().getLatitude() %>");
+    ratingList.push("<%= f.getRating()%>");
     <%}%>
 
+    <% if (request.getParameter("lat") != null && !request.getParameter("lat").isEmpty() &&
+    request.getParameter("long") != null && !request.getParameter("long").isEmpty()) { %>
+    var latlng = {
+        lat: parseFloat(<%=request.getParameter("lat")%>),
+        lng: parseFloat(<%=request.getParameter("long")%>)
+    };
+    <% } else { %>
     var latlng = {lat: 30.2849, lng: -97.7341};
+    <% } %>
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -94,10 +102,21 @@
 
 <% } else { %>
 <div class="text-center">
-    <h1>Bruh we couldn't find anything.</h1>
-    <form id="place-form" onkeypress="return event.keyCode != 13;" action="/foodRec" method="GET">
-        <input id="place" name="place" placeholder="Enter a place"/>
-        <input class="btn btn-lg btn-primary btn-width" type="submit" value="Go"/>
+
+    <div class="heading-title text-center">
+        <h2>Sorry, can you specify a location?</h2>
+    </div>
+
+    <form id="place-form" onkeypress="return event.keyCode != 13;" action="/placeRec" method="GET">
+
+        <div id="place-input" class="input-group mb-3">
+            <input type="text" class="form-control" id="place" name="place" placeholder="Enter a place">
+            <input class="form-control" name="param" type="hidden" value="<%=request.getParameter("param")%>"/>
+
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Go</button>
+            </div>
+        </div>
     </form>
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&libraries=places"></script>
@@ -111,7 +130,7 @@
     autocomplete.setFields(
         ['address_components', 'geometry', 'icon', 'name']);
 
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace();
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
