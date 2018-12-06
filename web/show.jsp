@@ -102,11 +102,21 @@
 
 <% } else { %>
 <div class="text-center">
-    <h1>Sorry, can you specify a location?</h1>
+
+    <div class="heading-title text-center">
+        <h2>Sorry, can you specify a location?</h2>
+    </div>
+
     <form id="place-form" onkeypress="return event.keyCode != 13;" action="/placeRec" method="GET">
-        <input id="place" name="place" placeholder="Enter a place"/>
-        <input name="param" type="hidden" value="<%=request.getParameter("param")%>"/>
-        <input class="btn btn-lg btn-primary btn-width" type="submit" value="Go"/>
+
+        <div id="place-input" class="input-group mb-3">
+            <input type="text" class="form-control" id="place" name="place" placeholder="Enter a place">
+            <input class="form-control" name="param" type="hidden" value="<%=request.getParameter("param")%>"/>
+
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Go</button>
+            </div>
+        </div>
     </form>
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&libraries=places"></script>
