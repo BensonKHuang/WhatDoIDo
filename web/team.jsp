@@ -17,14 +17,18 @@
         </div>
         <div class="col-sm-12">
             <p>
-                Etiam cursus mauris non sem suscipit, vitae egestas dui semper.
-                Morbi efficitur, sapien non porttitor maximus, dui est ornare nisl, sit amet ornare ipsum leo a dui.
-                Nam ornare, ligula eu condimentum efficitur, nibh lectus imperdiet odio, vitae consequat purus odio et odio.
-                Aenean non velit diam. Nulla egestas est sit amet lorem placerat eleifend.
-                Pellentesque sed fermentum ipsum.
-                Cras placerat purus id dignissim facilisis.
-                Maecenas fringilla, purus vitae dictum ultrices, mi erat ultricies elit, a tristique tellus velit ac lacus.
-                Etiam laoreet eros at turpis consequat, lacinia dapibus urna finibus.
+                These words have been spoken time and time again for generations.
+            </p>
+            <p>
+                No longer shall people be paralyzed by deciding where to go.
+            </p>
+            <p>
+                What do I do has been created to answer the largest epidemic of modern society: <strong>indecision</strong>.
+
+            </p>
+            <p>
+                By having a robust recommendation system based on user preferences and geolocation, WDID will provide users recommendations to meet any demand.
+                This is a useful, light-weight application that is easy to use, but has complex algorithms to give the best recommendations possible.
             </p>
         </div>
         <div class="col-sm-12 heading-title text-center">
