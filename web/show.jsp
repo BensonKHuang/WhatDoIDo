@@ -102,7 +102,7 @@
 
 <% } else { %>
 <div class="text-center">
-    <h1>Bruh we couldn't find anything.</h1>
+    <h1>Sorry, can you specify a location?</h1>
     <form id="place-form" onkeypress="return event.keyCode != 13;" action="/placeRec" method="GET">
         <input id="place" name="place" placeholder="Enter a place"/>
         <input name="param" type="hidden" value="<%=request.getParameter("param")%>"/>
