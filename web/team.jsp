@@ -15,7 +15,18 @@
             <h3 class="text-uppercase">"What do I do?"</h3>
             <a href="https://github.com/BensonKHuang/WhatDoIDo"><i class="fab fa-github fa-2x"></i></a>
         </div>
-
+        <div class="col-sm-12">
+            <p>
+                Etiam cursus mauris non sem suscipit, vitae egestas dui semper.
+                Morbi efficitur, sapien non porttitor maximus, dui est ornare nisl, sit amet ornare ipsum leo a dui.
+                Nam ornare, ligula eu condimentum efficitur, nibh lectus imperdiet odio, vitae consequat purus odio et odio.
+                Aenean non velit diam. Nulla egestas est sit amet lorem placerat eleifend.
+                Pellentesque sed fermentum ipsum.
+                Cras placerat purus id dignissim facilisis.
+                Maecenas fringilla, purus vitae dictum ultrices, mi erat ultricies elit, a tristique tellus velit ac lacus.
+                Etiam laoreet eros at turpis consequat, lacinia dapibus urna finibus.
+            </p>
+        </div>
         <div class="col-sm-12 heading-title text-center">
             <h3 class="text-uppercase">The WDID Team</h3>
         </div>
