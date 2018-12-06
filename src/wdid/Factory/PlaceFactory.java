@@ -1,9 +1,6 @@
 package wdid.Factory;
 
-import com.google.appengine.repackaged.com.google.gson.JsonArray;
-import com.google.appengine.repackaged.com.google.gson.JsonElement;
-import com.google.appengine.repackaged.com.google.gson.JsonObject;
-import com.google.appengine.repackaged.com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.GeocodingResult;

@@ -1,6 +1,6 @@
 package wdid.Factory;
 
-import com.google.appengine.repackaged.com.google.gson.*;
+import com.google.gson.*;
 import wdid.Recommendations.*;
 import wdid.Users.WDIDUser;
 
