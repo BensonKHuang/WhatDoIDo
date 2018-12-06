@@ -40,7 +40,11 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="/landing.jsp">What do I do?</a>
+
+    <a class="navbar-brand" href="/landing.jsp">
+        <img src="assets/wdid_trans.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span>DID</span>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
             aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,7 +53,7 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/team.jsp">Meet the Team</a>
+                <a class="nav-link" href="/team.jsp">About</a>
             </li>
         </ul>
         <ul class="navbar-nav">

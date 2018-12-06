@@ -7,12 +7,17 @@
 
 <%@include file="navbar.jsp" %>
 
+
 <div class="container">
     <div class="row">
 
         <div class="col-sm-12 heading-title text-center">
-            <h3 class="text-uppercase">The WDID Team</h3>
+            <h3 class="text-uppercase">"What do I do?"</h3>
             <a href="https://github.com/BensonKHuang/WhatDoIDo"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+
+        <div class="col-sm-12 heading-title text-center">
+            <h3 class="text-uppercase">The WDID Team</h3>
         </div>
 
         <div class="col-md-4 col-sm-4">
