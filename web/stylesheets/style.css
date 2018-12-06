@@ -133,6 +133,10 @@ form h5 {
     margin-top: 25px;
 }
 
+#disabledInput {
+    width: auto;
+}
+
 .form-group {
     width: 12%;
 }

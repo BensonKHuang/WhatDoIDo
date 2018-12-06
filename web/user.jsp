@@ -2,18 +2,26 @@
 
 <html>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <body>
 
 <%@include file="navbar.jsp" %>
 
+<% if(user == null){ %>
+    <c:redirect url="/landing.jsp"/>
+<%    } %>
 <div class="container">
 
     <div class="heading-title">
         <h3>User Preferences</h3>
     </div>
-
     <form action="/userUpdate" method="post">
+
+        <h5>Email</h5>
+        <div class="form-group">
+            <input class="form-control" id="disabledInput" type="text" value="<%=user.getEmail()%>" disabled>
+        </div>
+
         <h5>Gender</h5>
         <div class="form-group">
             <select class="form-control" name="gender" >
