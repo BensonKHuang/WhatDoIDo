@@ -15,7 +15,7 @@
             <h3 class="text-uppercase">"What do I do?"</h3>
             <a href="https://github.com/BensonKHuang/WhatDoIDo"><i class="fab fa-github fa-2x"></i></a>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 text-center">
             <p>
                 These words have been spoken time and time again for generations.
             </p>

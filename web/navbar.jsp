@@ -20,6 +20,7 @@
 
     ObjectifyService.begin();
     ObjectifyService.register(WDIDUser.class);
+    ObjectifyService.register(Review.class);
     WDIDUser userObj = new WDIDUser();
 %>
 
@@ -37,13 +38,16 @@
           href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
     <a class="navbar-brand" href="/landing.jsp">
-        <img src="assets/wdid_trans.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        <span>DID</span>
+        <img src="assets/white_small.png" width="32" height="32" class="d-inline-block align-top" alt="">
+        <%--<span>DID</span>--%>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
             aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,8 +56,11 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/team.jsp">About</a>
+            <li class="nav-item">
+                <a class="nav-link active" href="/team.jsp">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/reviews.jsp">Reviews</a>
             </li>
         </ul>
         <ul class="navbar-nav">

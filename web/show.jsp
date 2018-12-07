@@ -27,6 +27,39 @@
     </div>
 </div>
 
+<%--Review Button and Modal--%>
+<% if (user != null){%>
+<button type="button btn-primary" id="reviewButton" class="btn float-right tn-primary" data-toggle="modal" data-target="#exampleModal">Review our App!</button>
+<%}%>
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/reviews/new" id="newReview" method="post">
+                    <div class="form-group" id="form-input-review">
+                        <textarea class="form-control" rows="5" name="content" placeholder="Enter review" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitReview()" value="1">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitReview() {
+        document.getElementById("newReview").submit();
+    }
+</script>
 
 <div id="map"></div>
 

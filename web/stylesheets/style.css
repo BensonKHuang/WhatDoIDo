@@ -61,8 +61,39 @@ body {
     font-weight: normal;
 }
 
+/*Styling for Review Page*/
+
+#reviewButton {
+    position: relative;
+    z-index: 100;
+    margin-right: 50px;
+}
+
+#forward-blog {
+    z-index: 1;
+    position: relative;
+}
+
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}
+
 /*Styling for Show Page*/
 
+#exampleModal .modal-dialog {
+    -webkit-transform: translate(0, 50%);
+    -o-transform: translate(0, 50%);
+    transform: translate(0, 50%);
+}
 #intro{
     color: #007bff;
 }
@@ -80,6 +111,11 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+#form-input-review {
+    width: 100%;
+    text-align: center;
 }
 
 #next_rec {
@@ -129,6 +165,10 @@ body {
 }
 
 .text-center {
+    text-align: center;
+}
+
+.text-center p {
     text-align: center;
 }
 
