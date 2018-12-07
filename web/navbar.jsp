@@ -37,6 +37,8 @@
           href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -53,7 +55,7 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <%  if (user != null) {
+            <% if (user != null) {
                 userObj = ofy().load().type(WDIDUser.class).id(user.getEmail()).now();
                 if (userObj == null) {
                     userObj = new WDIDUser(user.getEmail(), user.getNickname());

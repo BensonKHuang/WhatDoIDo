@@ -17,6 +17,9 @@
         <h1 id="recommendation">
             <span><span id="theTitle"> ... </span></span>
         </h1>
+        <div class="stars-outer">
+            <div class="stars-inner"></div>
+        </div>
         <h3 id="location" class="card-text mb-auto">
             <span><span id="theDesc"> ... </span></span>
         </h3>
