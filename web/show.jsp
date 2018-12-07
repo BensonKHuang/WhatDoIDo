@@ -29,7 +29,7 @@
 
 <%--Review Button and Modal--%>
 <% if (user != null){%>
-<button type="button btn-primary" id="reviewButton" class="btn float-right tn-primary" data-toggle="modal" data-target="#exampleModal">Review our App!</button>
+<button type="button" id="reviewButton" class="btn btn-success float-right tn-primary" data-toggle="modal" data-target="#exampleModal">Review our App!</button>
 <%}%>
 <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
