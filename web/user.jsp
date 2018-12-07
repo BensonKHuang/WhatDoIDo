@@ -19,7 +19,7 @@
 
         <h5>Email</h5>
         <div class="form-group">
-            <input class="form-control" id="disabledInput" type="text" value="<%=user.getEmail()%>" disabled>
+            <strong><%=user.getEmail()%></strong>
         </div>
 
         <h5>Gender</h5>

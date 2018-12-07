@@ -20,7 +20,7 @@
             List<Review> reviews = ObjectifyService.ofy().load().type(Review.class).list();
             Collections.sort(reviews);
             for (Review review: reviews){
-                pageContext.setAttribute("review_author", review.getUser().getEmail());
+                pageContext.setAttribute("review_author", review.getUser().getName());
                 pageContext.setAttribute("review_date", review.getDateString());
                 pageContext.setAttribute("review_content", review.getContent());
         %>

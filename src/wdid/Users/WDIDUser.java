@@ -13,10 +13,11 @@ public class WDIDUser {
 	@Getter @Setter private int gender,  age;
 	public boolean  diet[], movie[];
 	@Getter @Setter private Double latitude, longitude;
-	@Getter @Setter private String place;
+	@Getter @Setter private String place, name;
 
 	public WDIDUser() {}
 	public WDIDUser(String email, String name) {
+		this.name = name;
 		this.email = email;
 		this.gender = 0;
 		this.age    = 18;
