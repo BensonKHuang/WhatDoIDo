@@ -1,5 +1,6 @@
 package wdid.Servlets;
 
+import javafx.beans.property.MapProperty;
 import wdid.Factory.PlaceFactory;
 import wdid.Factory.RecommendationFactory;
 import wdid.Recommendations.RecommendationIterator;
@@ -62,7 +63,8 @@ public class PlaceServlet extends HttpServlet {
         if (res != null && res.hasNext()) {
             req.setAttribute(REC, factory.getRecommendations(user, param));
         }
-        req.setAttribute(MSG, MsgMap.get(param));
+
+        req.setAttribute(MSG, MsgMap.containsKey(param) ? MsgMap.get(param) : MsgMap.get("park"));
         resp.setContentType("text/html");
         RequestDispatcher view;
         view = req.getRequestDispatcher("/show.jsp");

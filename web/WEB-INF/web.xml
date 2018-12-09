@@ -31,14 +31,16 @@
         <url-pattern>/userUpdate</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>newReview</servlet-name>
+        <servlet-class>wdid.Servlets.CreateReviewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>newReview</servlet-name>
+        <url-pattern>/reviews/new</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>landing.jsp</welcome-file>
     </welcome-file-list>
-
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <page-encoding>UTF-8</page-encoding>
-        </jsp-property-group>
-    </jsp-config>
 </web-app>

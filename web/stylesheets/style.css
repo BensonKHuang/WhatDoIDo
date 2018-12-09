@@ -61,8 +61,41 @@ body {
     font-weight: normal;
 }
 
+/*Styling for Review Page*/
+
+#reviewButton {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 100;
+    margin: 50px;
+}
+
+#forward-blog {
+    z-index: 1;
+    position: relative;
+}
+
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}
+
 /*Styling for Show Page*/
 
+#exampleModal .modal-dialog {
+    -webkit-transform: translate(0, 50%);
+    -o-transform: translate(0, 50%);
+    transform: translate(0, 50%);
+}
 #intro{
     color: #007bff;
 }
@@ -82,11 +115,28 @@ body {
     right: 0;
 }
 
+#form-input-review {
+    width: 100%;
+    text-align: center;
+}
+
 #next_rec {
     z-index: 100;
-    position: relative;
-    text-align: center;
-    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 120px;
+    margin-right: 50px;
+}
+
+#directions {
+    margin-top: 15px;
+    float: right;
+}
+
+#place-form {
+    margin: 0 auto;
+    width: 25%;
 }
 
 .card {
@@ -124,6 +174,10 @@ body {
 }
 
 .text-center {
+    text-align: center;
+}
+
+.text-center p {
     text-align: center;
 }
 
@@ -218,19 +272,6 @@ form h5 {
 .team-member:hover .team-hover, .team-member:hover .team-hover .desk, .team-member:hover .team-hover .s-link {
     opacity: 1;
 }
-/*.team-hover .s-link {*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
-    /*opacity: 0;*/
-    /*text-align: center;*/
-    /*-webkit-transform: translateY(45%);*/
-    /*-ms-transform: translateY(45%);*/
-    /*transform: translateY(45%);*/
-    /*-webkit-transition: all 0.3s 0.2s;*/
-    /*transition: all 0.3s 0.2s;*/
-    /*font-size: 35px;*/
-/*}*/
 
 .desk, .desk h4, .team-hover .s-link a {
     text-align: center;
@@ -263,11 +304,12 @@ form h5 {
 .stars-outer {
     display: inline-block;
     position: relative;
+    font-size: xx-large;
     font-family: FontAwesome;
 }
 
 .stars-outer::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
+    content: "\2606 \2606 \2606 \2606 \2606";
 }
 
 .stars-inner {
@@ -280,6 +322,6 @@ form h5 {
 }
 
 .stars-inner::before {
-    content: "\f005 \f005 \f005 \f005 \f005";
+    content: "\2605 \2605 \2605 \2605 \2605";
     color: #f8ce0b;
 }
