@@ -36,6 +36,15 @@
         <input id="longMovie" name="long" type="hidden" value=""/>
         <input class="btn btn-lg btn-primary btn-width" type="submit" value="Movie"/>
     </form>
+    <br>
+    <br>
+    <br>
+    <form action="/placeRec" method="GET">
+        <input id="latSur" name="lat" type="hidden" value=""/>
+        <input id="longSur" name="long" type="hidden" value=""/>
+        <input name="param" type="hidden" value="_surprise_"/>
+        <input class="btn btn-lg btn-success btn-width" type="submit" value="Surprise Me"/>
+    </form>
 
 </div>
 
@@ -52,6 +61,9 @@
 
         document.getElementById("latPark").value = lat;
         document.getElementById("longPark").value = lng;
+
+        document.getElementById("latSur").value = lat;
+        document.getElementById("longSur").value = lng;
 
         document.getElementById("latMovie").value = lat;
         document.getElementById("longMovie").value = lng;

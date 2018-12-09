@@ -16,20 +16,26 @@
             <a href="https://github.com/BensonKHuang/WhatDoIDo"><i class="fab fa-github fa-2x"></i></a>
         </div>
         <div class="col-sm-12 text-center">
-            <p>
-                These words have been spoken time and time again for generations.
-            </p>
-            <p>
-                No longer shall people be paralyzed by deciding where to go.
-            </p>
-            <p>
-                What do I do has been created to answer the largest epidemic of modern society: <strong>indecision</strong>.
+            <p>What should I do? What do I do?</p>
+            <p>We’ve all been there- wondering what’s new and exciting out there.</p>
+            <p>Enter WDID: your personal activities assistant.</p>
+            <p>WDID’s robust recommendation system and real-time databases make finding a recommendation for any activity as simple as a click.</p>
+            <p>Even if you’re indecisive, WDID is great if you’re looking for a new adventure in your life.</p>
+            <p>So go ahead, and see what’s waiting ahead. <a href="landing.jsp">Surprise me.</a></p>
+            <%--<p>--%>
+                <%--These words have been spoken time and time again for generations.--%>
+            <%--</p>--%>
+            <%--<p>--%>
+                <%--No longer shall people be paralyzed by deciding where to go.--%>
+            <%--</p>--%>
+            <%--<p>--%>
+                <%--What do I do has been created to answer the largest epidemic of modern society: <strong>indecision</strong>.--%>
 
-            </p>
-            <p>
-                By having a robust recommendation system based on user preferences and geolocation, WDID will provide users recommendations to meet any demand.
-                This is a useful, light-weight application that is easy to use, but has complex algorithms to give the best recommendations possible.
-            </p>
+            <%--</p>--%>
+            <%--<p>--%>
+                <%--By having a robust recommendation system based on user preferences and geolocation, WDID will provide users recommendations to meet any demand.--%>
+                <%--This is a useful, light-weight application that is easy to use, but has complex algorithms to give the best recommendations possible.--%>
+            <%--</p>--%>
         </div>
         <div class="col-sm-12 heading-title text-center">
             <h3 class="text-uppercase">The WDID Team</h3>

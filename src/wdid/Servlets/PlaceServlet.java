@@ -6,6 +6,8 @@ import wdid.Recommendations.RecommendationIterator;
 import wdid.Users.WDIDUser;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +37,7 @@ public class PlaceServlet extends HttpServlet {
         MsgMap.put("restaurant", "Why don't you eat at...");
         MsgMap.put("park", "Why don't you go to...");
         MsgMap.put("night_club", "Why don't you party at...");
+        MsgMap.put("department_store", "Why don't you shop at...");
     }
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,6 +45,11 @@ public class PlaceServlet extends HttpServlet {
         RecommendationIterator res = null;
 
         String param = req.getParameter("param");
+        if (param.equals("_surprise_")) {
+            ArrayList<String> keys = new ArrayList<>(MsgMap.keySet());
+            Collections.shuffle(keys);
+            param = keys.get(0);
+        }
 
         if (req.getParameter(LAT) != null
                 && !req.getParameter(LAT).isEmpty()
