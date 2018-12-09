@@ -87,11 +87,11 @@
 
     <%while(recItr.hasNext()) {
         Recommendation f = recItr.next();
-        %>nameList.push("<%= f.getName() %>");
-    descList.push("<%= f.getDescription() %>");
-    lng.push("<%= f.getLocation().getLongitude() %>");
-    lat.push("<%= f.getLocation().getLatitude() %>");
-    ratingList.push("<%= f.getRating()%>");
+        %>nameList.push(`<%= f.getName() %>`);
+    descList.push(`<%= f.getDescription() %>`);
+    lng.push(`<%= f.getLocation().getLongitude() %>`);
+    lat.push(`<%= f.getLocation().getLatitude() %>`);
+    ratingList.push(`<%= f.getRating()%>`);
     <%}%>
 
     <% if (request.getParameter("lat") != null && !request.getParameter("lat").isEmpty() &&
