@@ -17,7 +17,7 @@
         </div>
         <div class="col-sm-12 text-center">
             <p>What should I do? What do I do?</p>
-            <p>We’ve all been there- wondering what’s new and exciting out there.</p>
+            <p>We’ve all been there, wondering what’s new and exciting out there.</p>
             <p>Enter WDID: your personal activities assistant.</p>
             <p>WDID’s robust recommendation system and real-time databases make finding a recommendation for any activity as simple as a click.</p>
             <p>Even if you’re indecisive, WDID is great if you’re looking for a new adventure in your life.</p>
