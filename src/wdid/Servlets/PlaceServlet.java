@@ -1,6 +1,5 @@
 package wdid.Servlets;
 
-import javafx.beans.property.MapProperty;
 import wdid.Factory.PlaceFactory;
 import wdid.Factory.RecommendationFactory;
 import wdid.Recommendations.RecommendationIterator;

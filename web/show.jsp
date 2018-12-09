@@ -148,7 +148,7 @@
 
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGpZ2Pmi_TTFVTImyot_GnTDR-YAA65IU&callback=initMap"></script>
 
 <% } else { %>
 <div class="text-center">
@@ -169,7 +169,7 @@
         </div>
     </form>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSL3VeLZviw2aVMVD5e01d0dUKN7lNHdA&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGpZ2Pmi_TTFVTImyot_GnTDR-YAA65IU&libraries=places"></script>
 
 <script>
     var input = document.getElementById('place');
