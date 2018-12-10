@@ -232,6 +232,7 @@ form h5 {
 }
 
 .team-hover {
+    font-size: 15px;
     position: absolute;
     top: 0;
     left: 0;

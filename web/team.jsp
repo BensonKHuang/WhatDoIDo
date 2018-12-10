@@ -13,7 +13,7 @@
 
         <div class="col-sm-12 heading-title text-center">
             <h3 class="text-uppercase">"What do I do?"</h3>
-            <a href="https://github.com/BensonKHuang/WhatDoIDo"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://github.com/BensonKHuang/WhatDoIDo" target="_blank"><i class="fab fa-github fa-2x"></i></a>
         </div>
         <div class="col-sm-12 text-center">
             <p>What should I do? What do I do?</p>

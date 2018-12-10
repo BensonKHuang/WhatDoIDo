@@ -43,7 +43,7 @@
         <input id="latSur" name="lat" type="hidden" value=""/>
         <input id="longSur" name="long" type="hidden" value=""/>
         <input name="param" type="hidden" value="_surprise_"/>
-        <input class="btn btn-lg btn-success btn-width" type="submit" value="Surprise Me"/>
+        <input class="btn btn-lg btn-success" type="submit" value="Surprise Me"/>
     </form>
 
 </div>

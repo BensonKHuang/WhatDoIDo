@@ -24,9 +24,12 @@
             <div class="stars-outer">
                 <div class="stars-inner"></div>
             </div>
+
+            <% if (request.getAttribute("type") == null || !request.getAttribute("type").equals("movie")) {%>
             <div id="directions">
                 <button class="btn btn-primary" onclick="openDirections()">Take me there!</button>
             </div>
+            <% } %>
         </div>
     </div>
 </div>
@@ -139,7 +142,6 @@
         const starPercentageRounded = starRating + '%';
         document.querySelector(`.stars-inner`).style.width = starPercentageRounded;
         directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=" + lat[current] + "," + lng[current];
-        console.error(directionsUrl);
     }
 
     function openDirections() {
